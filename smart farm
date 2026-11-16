@@ -1,0 +1,193 @@
+1 Define a class Student with data members.
+Answer:
+A class is a user-defined data type that contains data members and member functions. A Student class can store details such as roll number, name, age and marks.
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int roll;
+    char name[50];
+    int age;
+    float marks;
+
+public:
+    void getData()
+    {
+        cout << "Enter Roll Number: ";
+        cin >> roll;
+
+        cout << "Enter Name: ";
+        cin >> name;
+
+        cout << "Enter Age: ";
+        cin >> age;
+
+        cout << "Enter Marks: ";
+        cin >> marks;
+    }
+
+    void display()
+    {
+        cout << "\nStudent Details";
+        cout << "\nRoll Number: " << roll;
+        cout << "\nName: " << name;
+        cout << "\nAge: " << age;
+        cout << "\nMarks: " << marks;
+    }
+};
+
+int main()
+{
+    Student s;
+
+    s.getData();
+    s.display();
+
+    return 0;
+}
+output-
+Enter Roll Number: 101
+Enter Name: Rahul
+Enter Age: 20
+Enter Marks: 85
+
+Student Details
+Roll Number: 101
+Name: Rahul
+Age: 20
+Marks: 85
+
+2 Create a class Rectangle to store employee details and display them using object.
+Answer:
+A class is a collection of data members and member functions. An object is an instance of a class used to access its members.
+
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+    int id;
+    char name[50];
+    float salary;
+
+public:
+    void getData()
+    {
+        cout << "Enter Employee ID: ";
+        cin >> id;
+
+        cout << "Enter Employee Name: ";
+        cin >> name;
+
+        cout << "Enter Salary: ";
+        cin >> salary;
+    }
+
+    void display()
+    {
+        cout << "\nEmployee Details";
+        cout << "\nEmployee ID: " << id;
+        cout << "\nEmployee Name: " << name;
+        cout << "\nSalary: " << salary;
+    }
+};
+
+int main()
+{
+    Employee e;
+
+    e.getData();
+    e.display();
+
+    return 0;
+}
+output-
+Enter Employee ID: 101
+Enter Employee Name: Amit
+Enter Salary: 25000
+
+Employee Details
+Employee ID: 101
+Employee Name: Amit
+Salary: 25000
+
+3 Write a C++ program to demonstrate the use of multiple objects of the same class.
+Answer:
+Multiple objects are instances of the same class. Each object has its own separate copy of the data members.
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int roll;
+    char name[50];
+
+public:
+    void getData()
+    {
+        cout << "Enter Roll Number: ";
+        cin >> roll;
+
+        cout << "Enter Name: ";
+        cin >> name;
+    }
+
+    void display()
+    {
+        cout << "\nRoll Number: " << roll;
+        cout << "\nName: " << name << endl;
+    }
+};
+
+int main()
+{
+    Student s1, s2, s3;
+
+    cout << "Enter details of Student 1:\n";
+    s1.getData();
+
+    cout << "\nEnter details of Student 2:\n";
+    s2.getData();
+
+    cout << "\nEnter details of Student 3:\n";
+    s3.getData();
+
+    cout << "\nStudent Details:\n";
+
+    s1.display();
+    s2.display();
+    s3.display();
+
+    return 0;
+}
+output-
+Enter details of Student 1:
+Enter Roll Number: 1
+Enter Name: Rahul
+
+Enter details of Student 2:
+Enter Roll Number: 2
+Enter Name: Amit
+
+Enter details of Student 3:
+Enter Roll Number: 3
+Enter Name: Raj
+
+Student Details:
+
+Roll Number: 1
+Name: Rahul
+
+Roll Number: 2
+Name: Amit
+
+Roll Number: 3
+Name: Raj
+
+
+
+
+
