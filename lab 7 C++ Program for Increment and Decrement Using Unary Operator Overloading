@@ -1,0 +1,53 @@
+
+#include <iostream>
+using namespace std;
+
+class Complex
+{
+    int real, imag;
+
+public:
+
+    Complex(int r, int i)
+    {
+        real = r;
+        imag = i;
+    }
+
+    // Overload increment operator
+    void operator++()
+    {
+        real++;
+        imag++;
+    }
+
+    // Overload decrement operator
+    void operator--()
+    {
+        real--;
+        imag--;
+    }
+
+    void display()
+    {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main()
+{
+    Complex c(5, 3);
+
+    cout << "Original Complex Number: ";
+    c.display();
+
+    ++c;
+    cout << "After Increment: ";
+    c.display();
+
+    --c;
+    cout << "After Decrement: ";
+    c.display();
+
+    return 0;
+}
