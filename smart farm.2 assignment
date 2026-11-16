@@ -1,0 +1,177 @@
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int roll;
+    char name[50];
+
+public:
+
+    // Default Constructor
+    Student()
+    {
+        roll = 0;
+        cout << "Default Constructor Called\n";
+    }
+
+    // Parameterized Constructor
+    Student(int r, char n[])
+    {
+        roll = r;
+
+        int i;
+        for(i = 0; n[i] != '\0'; i++)
+            name[i] = n[i];
+
+        name[i] = '\0';
+
+        cout << "Parameterized Constructor Called\n";
+    }
+
+    void display()
+    {
+        cout << "Roll Number: " << roll << endl;
+        cout << "Name: " << name << endl;
+    }
+};
+
+int main()
+{
+    Student s1;
+
+    Student s2(101, "Rahul");
+
+    cout << "\nDefault Constructor Output:\n";
+    s1.display();
+
+    cout << "\nParameterized Constructor Output:\n";
+    s2.display();
+
+    return 0;
+}
+output-
+Default Constructor Called
+Parameterized Constructor Called
+
+Default Constructor Output:
+Roll Number: 0
+Name:
+
+Parameterized Constructor Output:
+Roll Number: 101
+Name: Rahul
+A constructor is a special member function that is automatically called when an object is created.
+- Default Constructor: A constructor that takes no arguments.
+- Parameterized Constructor: A constructor that takes arguments to initialize data members.
+
+5 Explain Destructor with a suitable example.
+Answer:
+
+A destructor is a special member function that is automatically called when an object is destroyed. It is used to perform cleanup operations.
+
+Features of Destructor:
+1. It has the same name as the class.
+2. It starts with a tilde (~) symbol.
+3. It has no return type.
+4. It does not take arguments.
+5. It is called automatically when an object goes out of scope.
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+public:
+
+    Student()
+    {
+        cout << "Constructor Called\n";
+    }
+
+    ~Student()
+    {
+        cout << "Destructor Called\n";
+    }
+};
+
+int main()
+{
+    Student s;
+
+    cout << "Inside Main Function\n";
+
+    return 0;
+}
+
+output-
+Constructor Called
+Inside Main Function
+Destructor Called
+
+6 Write a C++ program to demonstrate the types of inheritance with a suitable example.
+Answer:
+Inheritance is an important feature of C++ in which one class acquires the properties and functions of another class.
+
+There are five main types of inheritance:
+1. Single Inheritance
+2. Multiple Inheritance
+3. Multilevel Inheritance
+4. Hierarchical Inheritance
+5. Hybrid Inheritance
+
+
+#include <iostream>
+using namespace std;
+
+// Base Class
+class Student
+{
+protected:
+    int roll;
+
+public:
+    void getRoll()
+    {
+        cout << "Enter Roll Number: ";
+        cin >> roll;
+    }
+};
+
+// Derived Class
+class Result : public Student
+{
+    float marks;
+
+public:
+    void getMarks()
+    {
+        cout << "Enter Marks: ";
+        cin >> marks;
+    }
+
+    void display()
+    {
+        cout << "\nRoll Number: " << roll;
+        cout << "\nMarks: " << marks;
+    }
+};
+
+int main()
+{
+    Result r;
+
+    r.getRoll();
+    r.getMarks();
+    r.display();
+
+    return 0;
+}
+output-
+Enter Roll Number: 101
+Enter Marks: 85
+
+Roll Number: 101
+Marks: 85
+
