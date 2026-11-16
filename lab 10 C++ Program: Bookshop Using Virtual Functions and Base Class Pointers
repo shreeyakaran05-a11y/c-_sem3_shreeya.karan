@@ -1,0 +1,99 @@
+
+#include <iostream>
+using namespace std;
+
+// Base Class
+class Media
+{
+protected:
+    char title[50];
+    char publication[50];
+
+public:
+
+    virtual void read()
+    {
+        cout << "Enter title: ";
+        cin >> title;
+
+        cout << "Enter publication: ";
+        cin >> publication;
+    }
+
+    virtual void show()
+    {
+        cout << "Title: " << title << endl;
+        cout << "Publication: " << publication << endl;
+    }
+};
+
+// Derived Class Book
+class Book : public Media
+{
+    int pages;
+
+public:
+
+    void read()
+    {
+        Media::read();
+
+        cout << "Enter number of pages: ";
+        cin >> pages;
+    }
+
+    void show()
+    {
+        Media::show();
+
+        cout << "Number of pages: " << pages << endl;
+    }
+};
+
+// Derived Class Tape
+class Tape : public Media
+{
+    float time;
+
+public:
+
+    void read()
+    {
+        Media::read();
+
+        cout << "Enter playing time: ";
+        cin >> time;
+    }
+
+    void show()
+    {
+        Media::show();
+
+        cout << "Playing time: " << time << " minutes" << endl;
+    }
+};
+
+int main()
+{
+    Media *ptr;
+    Book b;
+    Tape t;
+
+    cout << "\nEnter Book Details:\n";
+    ptr = &b;
+    ptr->read();
+
+    cout << "\nEnter Tape Details:\n";
+    ptr = &t;
+    ptr->read();
+
+    cout << "\n----- BOOK DETAILS -----\n";
+    ptr = &b;
+    ptr->show();
+
+    cout << "\n----- TAPE DETAILS -----\n";
+    ptr = &t;
+    ptr->show();
+
+    return 0;
+}
